@@ -40,7 +40,7 @@ public class TablamemoriaController {
 	public Tablamemoria newTablamemoria(@RequestBody Tablamemoria tmp){
 		Tablamemoria newtmp=new Tablamemoria();
 		newtmp=tmp;
-		return newtmp;
+		return jpTmp.updIDTabla(newtmp);
 	}
 	
 	@GetMapping("tablamemoria/{id}")

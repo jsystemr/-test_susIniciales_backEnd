@@ -34,4 +34,6 @@ public class TemporalBDService {
 	public void delIDTablamemoria(Integer id) {
 		jpTmp.deleteById(id);
 	}
+	
+	
 }

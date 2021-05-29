@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -16,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity(name = "Tablamemoria")
 public class Tablamemoria {
 	@Id
-	 @GeneratedValue
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer ID;
 	private String Nombre;
 	private BigDecimal Monto_deducir;
