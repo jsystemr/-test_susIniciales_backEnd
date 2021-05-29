@@ -1,11 +1,12 @@
 package edu.zamorano.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Repository.TemporalRepository;
+import edu.zamorano.Repository.TemporalRepository;
 import edu.zamorano.model.*;
 
 @Service
@@ -14,15 +15,19 @@ public class TemporalBDService {
 	@Autowired
 	TemporalRepository jpTmp;
 	
-	public List<TablaMemoria> getAllDatos(){
-		return jpTmp.findAll();
+	public List<Tablamemoria> getAllDatos(){
+		List<Tablamemoria> lt=jpTmp.findAll();//jpTmp.findAllTablamemoria();//
+		if(lt!=null) {
+			return lt;
+		}
+		return new ArrayList<Tablamemoria>();
 	}
 	
-	public TablaMemoria getIDTabla(Integer id) {
-		return jpTmp.getById(id);
+	public Tablamemoria getIDTabla(Integer id) {
+		return jpTmp.findById(id).get();
 	}
 	
-	public TablaMemoria updIDTabla(TablaMemoria tmp) {
+	public Tablamemoria updIDTabla(Tablamemoria tmp) {
 		return jpTmp.save(tmp);
 	}
 	

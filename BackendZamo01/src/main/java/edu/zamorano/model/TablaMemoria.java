@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -11,16 +12,17 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
-@Table(name = "TablaMemoria")
-public class TablaMemoria {
+//@Table(name = "tablamemoria")
+@Entity(name = "Tablamemoria")
+public class Tablamemoria {
 	@Id
+	 @GeneratedValue
 	private Integer ID;
 	private String Nombre;
-	private BigDecimal Monoto_deducir;
+	private BigDecimal Monto_deducir;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date FechaCambio;
+	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	private Date Fecha_cambio;
 	public int getID() {
 		return ID;
 	}
@@ -34,16 +36,16 @@ public class TablaMemoria {
 		Nombre = nombre;
 	}
 	public BigDecimal getMonoto_deducir() {
-		return Monoto_deducir;
+		return Monto_deducir;
 	}
 	public void setMonoto_deducir(BigDecimal monoto_deducir) {
-		Monoto_deducir = monoto_deducir;
+		Monto_deducir = monoto_deducir;
 	}
-	public Date getFechaCambio() {
-		return FechaCambio;
+	public Date getFecha_cambio() {
+		return Fecha_cambio;
 	}
-	public void setFechaCambio(Date fechaCambio) {
-		FechaCambio = fechaCambio;
+	public void setFecha_cambio(Date fechaCambio) {
+		Fecha_cambio = fechaCambio;
 	}
 	
 	
