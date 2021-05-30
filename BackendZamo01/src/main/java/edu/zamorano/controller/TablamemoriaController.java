@@ -61,7 +61,7 @@ public class TablamemoriaController {
 	public Tablamemoria updateTmp(@RequestBody Tablamemoria tmp,@PathVariable Integer id) {
 		Tablamemoria updTmp=jpTmp.getIDTabla(id);
 		updTmp.setNombre(tmp.getNombre());
-		updTmp.setMonoto_deducir(tmp.getMonoto_deducir());
+		updTmp.setMonto_deducir(tmp.getMonto_deducir());
 		updTmp.setFecha_cambio(tmp.getFecha_cambio());
 		return jpTmp.updIDTabla(updTmp);
 	}

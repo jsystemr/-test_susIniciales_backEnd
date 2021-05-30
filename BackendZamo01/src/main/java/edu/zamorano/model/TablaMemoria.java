@@ -22,7 +22,7 @@ public class Tablamemoria {
 	private String Nombre;
 	private BigDecimal Monto_deducir;
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date Fecha_cambio;
 	public int getID() {
 		return ID;
@@ -36,10 +36,10 @@ public class Tablamemoria {
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
-	public BigDecimal getMonoto_deducir() {
+	public BigDecimal getMonto_deducir() {
 		return Monto_deducir;
 	}
-	public void setMonoto_deducir(BigDecimal monoto_deducir) {
+	public void setMonto_deducir(BigDecimal monoto_deducir) {
 		Monto_deducir = monoto_deducir;
 	}
 	public Date getFecha_cambio() {
