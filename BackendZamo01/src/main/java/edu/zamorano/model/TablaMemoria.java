@@ -13,6 +13,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 //@Table(name = "tablamemoria")
 @Entity(name = "Tablamemoria")
 public class Tablamemoria {
@@ -23,6 +25,7 @@ public class Tablamemoria {
 	private BigDecimal Monto_deducir;
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date Fecha_cambio;
 	public int getID() {
 		return ID;
